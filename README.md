@@ -311,24 +311,12 @@ Ansible обычно уже использует /etc/ansible как рабоч�
 </p>
 
 3. Создание файла инвентаря
-
-Создайте инвентарь файла : /etc/ansible/hosts. Открываем файл /etc/ansible/hosts
-
-- Скачиваем файл с github, в нужную директорию:
-> !dos2unix и curl на BR-SRV уже скачаны!
-
-***curl -o /etc/ansible/hosts https://raw.githubusercontent.com/shiraorie/demo2026-1/main/files/hosts.file***
-
-***dos2unix /etc/ansible/hosts***
-
-- Проверяем его наличие:
-
 <p align="center">
   <img src="images/module2/43.png" width="600" />
 </p>
 
 <p align="center">
-  <img src="picture для варинта 2/ansible-hosts.png" width="600" />
+  <img src="picture для варинта 2/ansible-br-srv.png" width="600" />
 </p>
 
 4. Настройка SSH-доступа к машинам
