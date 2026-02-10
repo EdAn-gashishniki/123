@@ -593,7 +593,7 @@ EXIT;
   <img src="images\module2\nftables HQ-rtr.png" width="600" />
 </p>
 
-### <p align="center"><b>9. Настройте веб-сервер nginx как обратный прокси-сервер на HQ-RTR</b></p>
+### <p align="center"><b>9. Настройте веб-сервер  как обратный прокси-сервер на ISP</b></p>
 
 - При обращении по доменному имени web.au-team.irpo у клиента должно открываться веб приложение на HQ-SRV
 - При обращении по доменному имени docker.au-team.irpo клиента должно открываться веб приложение     testapp.
@@ -612,6 +612,8 @@ EXIT;
 Настройка Nginx как обратного прокси
 
 Создадим конфигурационный файл для сайта в Nginx, в котором настроим виртуальные хосты. Добавьте конфигурацию для проксирования запросов в файл reverse-proxy.conf:
+
+https://raw.githubusercontent.com/shiraorie/demo2026-1/main/files/reverse-proxy.conf
 
 <p align="center">
   <img src="images/module2/93.nginx.png" width="600" />
