@@ -316,7 +316,7 @@ Ansible обычно уже использует /etc/ansible как рабоч�
 </p>
 
 <p align="center">
-  <img src="picture для варинта 2/ansible-br-srv.png" width="600" />
+  <img src="images/module2/ansible-br-srv.png" width="600" />
 </p>
 
 4. Настройка SSH-доступа к машинам
@@ -431,14 +431,13 @@ P@ssw0rd, порт приложения 8080, при необходимости 
   <img src="images\module2\image ls.png" width="600" />
 </p>
 
-- Скачиваем curl
+заходим на hq-cli, подключаемся через ssh к br-srv. (ssh sshuser@192.168.0.2)
 
-<p align="center">
-  <img src="images\module2\install curl br-srv.png" width="600" />
-</p>
-- Скачиваем файл compose.yaml и помещаем его в корневую директорию:
+затем заходим в compose.yaml: nano compose.yaml
 
->curl -o ~/compose.yaml https://raw.githubusercontent.com/shiraorie/demo2026-1/main/files/compose.yaml
+Вписываем туда код:>compose.yaml https://raw.githubusercontent.com/shiraorie/demo2026-1/main/files/compose.yaml
+
+Либо если получится копировать, то через фаерфокс зайдём на по этой ссылки и скопируем весь текст и вставим его в compose.yaml (обязательно через ssh, иначе работать не будет)
 
 <p align="center">
   <img src="images\module2\compose.yaml.png" width="600" />
@@ -523,6 +522,16 @@ apache
   <img src="images\module2\index.php1.png" width="600" />
 </p>
 
+после монтирования(mount) переходим в mnt: cd /mnt/web
+
+после перехода нужно копировать dump.sql: cp dump.sql /root
+
+затем переходим в /root (можно просто написать cd либо же cd /root) и там уже выполняем импорт схемы и данных: 
+
+> mariadb -u webc -p -d webdb < ~/dump.sql
+
+(ICONV НЕ ДЕЛАЕМ, ИНАЧЕ ВСЁ СЛОМАЕТСЯ)
+
 Перейти в интерфейс управления MariaDB:
 
 >mariadb –u root
@@ -554,7 +563,7 @@ EXIT;
 
 > rm /var/www/html/index.html
 
-Включить и добавить в автозагрузку службу httpd2:
+Включить и добавить в автозагрузку службу apache2:
 
 >systemctl enable --now apache2
 >systemctl restart apache2
@@ -603,18 +612,6 @@ EXIT;
 Настройка Nginx как обратного прокси
 
 Создадим конфигурационный файл для сайта в Nginx, в котором настроим виртуальные хосты. Добавьте конфигурацию для проксирования запросов в файл reverse-proxy.conf:
-
-- Скачиваем файл с github в необходимую директорию:
-
-***apt install dos2unix -y***
-
-***apt install curl -y***
-
-***curl -o /etc/nginx/sites-available/default https://raw.githubusercontent.com/shiraorie/demo2026-1/main/files/reverse-proxy.conf***
-
-***dos2unix /etc/nginx/sites-available/reverse-proxy.conf***
-
-- Проверяем его наличие:
 
 <p align="center">
   <img src="images/module2/93.nginx.png" width="600" />
