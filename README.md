@@ -615,6 +615,8 @@ EXIT;
 
 https://raw.githubusercontent.com/shiraorie/demo2026-1/main/files/reverse-proxy.conf
 
+(Если лень, то создайте пользователя ssh (точно также как и для сервера) и зайдите через hq-cli по ssh на ISP(ip смотрим через ip -c a ens192) затем зайдите на ссылку и копируйте. далее переходим в nano /etc/nginx/sites-avaiable/reverse-proxy.conf и вставляем туда
+
 <p align="center">
   <img src="images/module2/93.nginx.png" width="600" />
 </p>
