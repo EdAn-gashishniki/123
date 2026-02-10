@@ -435,7 +435,9 @@ P@ssw0rd, порт приложения 8080, при необходимости 
 
 затем заходим в compose.yaml: nano compose.yaml
 
-Вписываем туда код:>compose.yaml https://raw.githubusercontent.com/shiraorie/demo2026-1/main/files/compose.yaml
+Вписываем туда код с ссылки:
+
+>compose.yaml https://raw.githubusercontent.com/shiraorie/demo2026-1/main/files/compose.yaml
 
 Либо если получится копировать, то через фаерфокс зайдём на по этой ссылки и скопируем весь текст и вставим его в compose.yaml (обязательно через ssh, иначе работать не будет)
 
